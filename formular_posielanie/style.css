@@ -1,0 +1,22 @@
+.enterForm table {
+      margin-top: 50;
+      border-collapse: collapse;
+      width: 750;
+      height: 500;
+}
+
+.enterForm input {
+      padding: 8px;
+}
+
+
+.postForm table {
+      border-collapse: collapse;
+      width: 100%;
+  }
+
+.postForm  th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+  }
