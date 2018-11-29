@@ -1,0 +1,4 @@
+Dominik Klein 3 12 1995 M
+Frantisek Kiska 1 9 2000 M
+Daniela Novakova 7 5 1991 F
+Martin Bartos 5 5 2002 M

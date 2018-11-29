@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang='cs'>
+  <head>
+    <title></title>
+    <meta charset='utf-8'>
+    <meta name='description' content=''>
+    <meta name='keywords' content=''>
+    <meta name='author' content=''>
+    <meta name='robots' content='all'>
+    <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
+    <script></script>
+  </head>
+  <body>
+  <form>
+    <table>
+        <caption>Registry</caption>
+        <tr>
+            <th>Name:</th>
+            <td><input type="text" placeholder="Enter your name."<input pattern=".{3,}"></td>
+        </tr>
+        <tr>
+            <th>Password:</th>
+            <td><input type="password" placeholder="Enter your password." pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"></td>
+        </tr>
+        <tr>
+            <th>Date of Birth:</th>
+            <td><input type="date"></td>
+        </tr>
+        <tr>
+            <th>Email:</th>
+            <td><input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></td>
+        </tr>
+        <tr>
+            <th>Grade:</th>
+            <td><input type="number"></td>
+        </tr>
+        <tr>
+            <th>Gender:</th>
+            <td>
+                <input type="radio" name="gender" value="Male">Male<br>
+                <input type="radio" name="gender" value="Female">Female<br>
+            </td>
+        </tr>
+        <tr>
+            <th>Marital Status:</th>
+            <td>
+                <input type="radio" name="marriagge" value="Single">Single<br>
+                <input type="radio" name="marriage" value="Married">Married<br>
+                <input type="radio" name="marriage" value="Divorced">Divorced<br>
+                <input type="radio" name="marriage" value="Widower">Widower<br>
+            </td>
+        </tr>
+        <tr>
+            <th>Launguage:</th>
+            <td>
+                <input type="checkbox" name="language" value="English">English<br>
+                <input type="checkbox" name="language" value="German">German<br>
+                <input type="checkbox" name="language" value="Rusian">Rusian<br>
+                <input type="checkbox" name="language" value="Other">Other<br>
+            </td>
+        </tr>
+         <tr>
+            <th>Nationality:</th>
+            <td>
+              <select>
+                  <option value="Chienise">Chienise
+                  <option value="Cubans">Cubans
+                  <option value="Czech">Czech
+                  <option value="Mongols">Mongols
+                  <option value="Poland">Poland
+              </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Grade:</th>
+            <td><input type="number"></td>
+        </tr>
+        <tr>
+            <th>File:</th>
+            <td><input type="file"></td>
+        </tr>
+        <tr>
+            <th>Happy:</th>
+            <td>Ano<input type="range">Nie</td>
+        </tr>
+        <tr>
+            <td><input type="reset"></td>
+            <td><input type="submit"></td>
+        </tr>
+    </table>
+  </form>
+  </body>
+</html>
