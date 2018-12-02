@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Form</title>
+  <style>
+    #data {width:700px, margin:auto;}
+    #contain {
+       background-color: #00cc00;
+       height:700px;
+       width:800px;
+    }
+    td {
+      padding: 2px 10px 2px 10px;
+    }
+
+    #result {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      border-top: 1px solid #ddd;
+      width:730px;
+    }
+  </style>
+  <script>
+    function addData()
+    {
+      let fname = document.getElementById("fname").value;
+    	let lname = document.getElementById("lname").value;
+    	let age = document.getElementById("age").value;
+    	let gender = document.querySelector('input[name="gender"]:checked').value;
+
+      let table = document.getElementById("result");
+      let row = table.insertRow(-1);
+    	row.setAttribute("name", "addedRow");
+
+      let cell0 = row.insertCell(0);
+      let cell1 = row.insertCell(1);
+    	let cell2 = row.insertCell(2);
+    	let cell3 = row.insertCell(3);
+
+      cell0.innerHTML = fname;
+      cell1.innerHTML = lname;
+    	cell2.innerHTML = age;
+    	cell3.innerHTML = gender;
+    }
+  </script>
+</head>
+<body>
+  <center>
+    <h1>Form</h1>
+    <div id = "data">
+      <table>
+      <tr>
+        <td>First Name:</td>
+        <td>Last Name:</td>
+        <td>Age:</td>
+        <td>Gender:</td>
+        <td><input type="submit" onclick="addData()"></td>
+      </tr>
+
+      <tr>
+        <td><input type="text" id="fname" name="fname" pattern="[A-Za-z]{1}"></td>
+        <td><input type="text" id="lname" name="lname" pattern="[A-Za-z]{1}"></td>
+        <td><input type="number" id="age" name="age" pattern="[A-Za-z]{1}"></td>
+        <td>
+        <input type="radio" name="gender" value="Male">Male</br>
+        <input type="radio" name="gender" value="Female">Female
+        </td>
+      </tr>
+      </table></br>
+    </div>
+  </center>
+<center>
+  <div>
+    <table id="result">
+      <tr>
+        <td><label>First Name</label></td>
+        <td><label>Last Name</label></td>
+        <td><label>Age</label></td>
+        <td><label>Gender</label></td>
+      </tr>
+    </table>
+  </div>
+</center>
+
+</body>
+</html>

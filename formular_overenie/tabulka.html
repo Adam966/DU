@@ -8,7 +8,23 @@
     <meta name='author' content=''>
     <meta name='robots' content='all'>
     <!-- <meta http-equiv='X-UA-Compatible' content='IE=edge'> -->
-    <script></script>
+    <script>
+    function otherLanguage()
+    {
+      let input = document.querySelector('input[type=checkbox]:checked');
+      let x = document.createElement("INPUT");
+
+      if (input) {
+        console.log("add");
+        x.setAttribute("type", "text");
+        document.getElementById('other').appendChild(x);
+      }
+      else {
+        console.log("remove");
+        document.getElementById('other').removeChild(x);
+      }
+    }
+    </script>
   </head>
   <body>
   <form>
@@ -52,11 +68,11 @@
         </tr>
         <tr>
             <th>Launguage:</th>
-            <td>
+            <td id="other">
                 <input type="checkbox" name="language" value="English">English<br>
                 <input type="checkbox" name="language" value="German">German<br>
                 <input type="checkbox" name="language" value="Rusian">Rusian<br>
-                <input type="checkbox" name="language" value="Other">Other<br>
+                <input id="check" type="checkbox" name="language" value="Other" onchange="otherLanguage()">Other<br>
             </td>
         </tr>
          <tr>
