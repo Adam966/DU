@@ -1,0 +1,40 @@
+.postForm table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.enterForm {
+  width: 550px;
+  margin: auto;
+  padding: inherit;
+  border: 3px solid #73AD21;
+}
+
+.postForm {
+  width: 700px;
+  padding: inherit;   
+  margin: auto;
+}
+
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  float: left;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}

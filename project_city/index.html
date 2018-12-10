@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Weather Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body>
+    <div class="enterForm">
+      <table>
+        <tbody>
+          <tr>
+            <td>City: <input type="text" id="city" pattern="[A-Za-z]{3}"></td>
+            <td>Country Code: <input type="text" id="cCode" pattern="[A-Z]{3}">}</td>
+            <td><button type="button" name="button" onclick="sendData()">Submit</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="postForm">
+      <table>
+        <tbody>
+          <tr>
+            <td>Temperature</td>
+            <td>Number of citisens</td>
+            <td>Geo cash</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
