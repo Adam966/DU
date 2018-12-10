@@ -78,6 +78,40 @@ function loadForm() {
 }
 
 function sortAge() {
-  let result = database.map(person => person.age);
-  console.log(result);
+  database.sort(function(a, b) {
+    return a.age - b.age;
+  });
+  console.log(database);
+}
+
+function sortLname() {
+  database.sort(function(a, b) {
+  let nameA = a.lname.toUpperCase();
+  let nameB = b.lname.toUpperCase();
+  if (nameA < nameB) {
+    return -1;
+  }
+  if (nameA > nameB) {
+    return 1;
+  }
+  console.log(database);
+  return 0;
+});
+  console.log(database);;
+}
+
+function sortFname() {
+  database.sort(function(a, b) {
+  let nameA = a.fname.toUpperCase();
+  let nameB = b.fname.toUpperCase();
+  if (nameA < nameB) {
+    return -1;
+  }
+  if (nameA > nameB) {
+    return 1;
+  }
+  console.log(database);
+  return 0;
+});
+  console.log(database);;
 }
