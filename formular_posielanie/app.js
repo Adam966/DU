@@ -11,16 +11,13 @@ function addData() {
   }
   database.push(person);
   console.log(person);
-  drawTable(person, index);
-  index++;
+  drawTable(person, database.length);
 }
 
 function drawTable(person, index) {
   let table = document.getElementById('result');
-  let btn = document.createElement('BUTTON');
-
   let row = table.insertRow(-1);
-  row.setAttribute("id", "row" + index);
+  let btn = document.createElement('BUTTON');
 
   let cell0 = row.insertCell(0);
   let cell1 = row.insertCell(1);
@@ -29,17 +26,28 @@ function drawTable(person, index) {
   let cell4 = row.insertCell(4);
   let cell5 = row.insertCell(5);
 
-  cell0.innerHTML = index;
-  cell1.innerHTML = person.fname;
-  cell2.innerHTML = person.lname;
-  cell3.innerHTML = person.age;
-  cell4.innerHTML = person.gender;
+  for (var i = 0; i < index; i++) {
 
-  cell5.appendChild(btn);
-  btn.innerHTML = 'Delete';
-  btn.setAttribute("onClick", "javascript: deleteRow(this.value);" );
-  //btn.setAttribute("name", "btnDel");
-  btn.setAttribute("value", index);
+    btn.innerHTML = 'Delete';
+    btn.setAttribute("onClick", "javascript: deleteRow(this.value);" );
+    btn.setAttribute("value", i);
+
+
+    row.setAttribute("id", "row" + i);
+
+    if (person.gender == 'Male') {
+      row.setAttribute("class", "resultRowM");
+    } else {
+      row.setAttribute("class", "resultRowF");
+    }
+
+    cell0.innerHTML = i;
+    cell1.innerHTML = person.fname;
+    cell2.innerHTML = person.lname;
+    cell3.innerHTML = person.age;
+    cell4.innerHTML = person.gender;
+    cell5.appendChild(btn);
+  }
 }
 
 function deleteRow(value) {
@@ -49,21 +57,27 @@ function deleteRow(value) {
   row.parentNode.removeChild(row);
 }
 
-function saveForm(person) {
+function saveForm() {
   console.log(database);
 
   if (typeof(Storage) !== "undefined") {
-    let dat = JSON.stringify(person);
-    localStorage.setItem("person", text);
-    console.log("Local storage save: " + text);
+    let data = JSON.stringify(database);
+    localStorage.setItem('index', database.length);
+    localStorage.setItem('person', data);
+    console.log("Local storage save:" + data);
   } else {
     alert("Web dont support local storage");
   }
 }
 
 function loadForm() {
-  localStorage.getItem("person", JSON.parse(person));
-  let text = localStorage.getItem("persons");
-  person = JSON.parse(text);
-  console.log("Local storage load: " + person);
+  let person = JSON.parse(localStorage.getItem('person'));
+  let index = localStorage.getItem('index');
+  console.log(index);
+  drawTable(person, index);
+}
+
+function sortAge() {
+  let result = database.map(person => person.age);
+  console.log(result);
 }
