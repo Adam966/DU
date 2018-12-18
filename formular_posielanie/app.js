@@ -1,9 +1,7 @@
 let database = [];
-let person;
-let index = 0;
 
 function addData() {
-  person = {
+  let person = {
     fname: document.getElementById('fname').value,
     lname: document.getElementById('lname').value,
     age: document.getElementById('age').value,
@@ -11,10 +9,10 @@ function addData() {
   }
   database.push(person);
   console.log(person);
-  drawTable(person, database.length);
+  console.log(database);
 }
 
-function drawTable(person, index) {
+function drawTable(database) {
   let table = document.getElementById('result');
   let row = table.insertRow(-1);
   let btn = document.createElement('BUTTON');
@@ -26,12 +24,13 @@ function drawTable(person, index) {
   let cell4 = row.insertCell(4);
   let cell5 = row.insertCell(5);
 
-  for (var i = 0; i < index; i++) {
+  for (var i = 0; i < database.length; i++) {
+
+    let person = database[i];
 
     btn.innerHTML = 'Delete';
     btn.setAttribute("onClick", "javascript: deleteRow(this.value);" );
     btn.setAttribute("value", i);
-
 
     row.setAttribute("id", "row" + i);
 
@@ -49,7 +48,7 @@ function drawTable(person, index) {
     cell5.appendChild(btn);
   }
 }
-
+//Deleting//////////////////////////////////////////////////
 function deleteRow(value) {
   console.log(value);
   let row = document.getElementById('row' + value);
@@ -57,31 +56,21 @@ function deleteRow(value) {
   row.parentNode.removeChild(row);
 }
 
-function saveForm() {
-  console.log(database);
-
-  if (typeof(Storage) !== "undefined") {
-    let data = JSON.stringify(database);
-    localStorage.setItem('index', database.length);
-    localStorage.setItem('person', data);
-    console.log("Local storage save:" + data);
-  } else {
-    alert("Web dont support local storage");
+function deleteTable() {
+  for (var i = 0; i < database.length; i++) {
+    let row = document.getElementById('row' + i);
+    row.parentNode.removeChild(row);
   }
 }
 
-function loadForm() {
-  let person = JSON.parse(localStorage.getItem('person'));
-  let index = localStorage.getItem('index');
-  console.log(index);
-  drawTable(person, index);
-}
-
+//Sorting//////////////////////////////////////////////////
 function sortAge() {
   database.sort(function(a, b) {
     return a.age - b.age;
   });
   console.log(database);
+  deleteTable();
+  drawTable(database);
 }
 
 function sortLname() {
@@ -94,10 +83,11 @@ function sortLname() {
   if (nameA > nameB) {
     return 1;
   }
-  console.log(database);
   return 0;
 });
-  console.log(database);;
+console.log(database);
+deleteTable();
+drawTable(database);
 }
 
 function sortFname() {
@@ -110,8 +100,26 @@ function sortFname() {
   if (nameA > nameB) {
     return 1;
   }
-  console.log(database);
   return 0;
 });
-  console.log(database);;
+  console.log(database);
+  deleteTable();
+  drawTable(database);
+}
+
+//Save and Load////////////////////////////////////////////
+function saveForm() {
+  if (typeof(Storage) !== "undefined") {
+    localStorage.setItem('index', database.length);
+    localStorage.setItem('person', JSON.stringify(database));
+  } else {
+    alert("Web dont support local storage");
+  }
+}
+
+function loadForm() {
+  let person = JSON.parse(localStorage.getItem('person'));
+  let index = localStorage.getItem('index');
+  console.log(index);
+  drawTable(database);
 }
