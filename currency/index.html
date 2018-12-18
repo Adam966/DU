@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Currency Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body>
+    <div class="enterForm">
+      EUR:
+      <input type="number" id="amount">
+    </div>
+    <div class="postForm">
+      <table>
+        <tbody>
+          <label>Currency: </label>
+          <tr>
+            <td>USD</td>
+            <td>CZK</td>
+            <td>GBP</td>
+            <td>CHF</td>
+            <td>CNY</td>
+          </tr>
+          <tr>
+            <td id="USD"></td>
+            <td id="CZK"></td>
+            <td id="GBP"></td>
+            <td id="CHF"></td>
+            <td id="CNY"></td>
+          </tr>
+          <tr>
+            <td id="USDamount"></td>
+            <td id="CZKamount"></td>
+            <td id="GBPamount"></td>
+            <td id="CHFamount"></td>
+            <td id="CNYamount"></td>
+          </tr>
+          <button onclick="sendData()">Send</button>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
