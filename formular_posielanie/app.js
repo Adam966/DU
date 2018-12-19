@@ -85,9 +85,6 @@ function sortLname() {
   }
   return 0;
 });
-console.log(database);
-deleteTable();
-drawTable(database);
 }
 
 function sortFname() {
