@@ -2,35 +2,75 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Weather Form</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="app.js"></script>
+    <title>Weather forecast</title>
   </head>
   <body>
     <div class="enterForm">
       <table>
-        <tbody>
-          <tr>
-            <td>City: <input type="text" id="city" pattern="[A-Za-z]{3}"></td>
-            <td>Country Code: <input type="text" id="cCode" pattern="[A-Z]{3}"></td>
-            <td><button type="button" name="button" onclick="sendData()">Submit</button></td>
-          </tr>
-        </tbody>
+        <tr>
+          <td>City: </td>
+          <td><input type="text" id="city" placeholder="Enter name of city." required></td>
+          <td>Country Code: </td>
+          <td><input type="text" id="cCode" placeholder="Enter country code." required></td>
+          <td><input type="submit" value="Send" onclick="getValues()"></td>
+        </tr>
       </table>
     </div>
-    <div class="postForm">
-      <table>
-        <tbody>
+    <div class="grid-container">
+      <div class="temp">
+        <table>
+          <label id="label">Weather Now:</label>
           <tr>
-            <td>Temperature</td>
-            <td>Number of citisens</td>
-            <td>Geo cash</td>
+            <td id="day"></td>
           </tr>
           <tr>
+            <td id="desc"></td>
+          </tr>
+          <tr>
+            <td><img id="icon"></td>
             <td id="temp"></td>
           </tr>
-        </tbody>
-      </table>
+        </table>
+      </div>
+      <div class="humidity">
+        <table>
+          <label id="label">Weather information:</label>
+          <tr>
+            <td id="cloud"></td>
+          </tr>
+          <tr>
+            <td id="humidity"></td>
+          </tr>
+          <tr>
+            <td id="windSpeed"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="forecast">
+        <table>
+          <label id="label">Forecast:</label>
+          <tr>
+            <td name="days"></td>
+            <td name="days"></td>
+            <td name="days"></td>
+            <td name="days"></td>
+          </tr>
+          <tr>
+            <td><img name="img"></td>
+            <td><img name="img"></td>
+            <td><img name="img"></td>
+            <td><img name="img"></td>
+          </tr>
+          <tr>
+            <td name="temps"></td>
+            <td name="temps"></td>
+            <td name="temps"></td>
+            <td name="temps"></td>
+          </tr>
+        </table>
+      </div>
     </div>
   </body>
 </html>

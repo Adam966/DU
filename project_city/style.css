@@ -1,40 +1,73 @@
-.postForm table {
-  border-collapse: collapse;
+.grid-container {
+  display: grid;
+  grid-template-columns: 350px 350px;
+  grid-template-rows: 150px 400px;
+  grid-template-areas: "temp humidity" "forecast forecast";
+  font-family: sans-serif;
+  font-size: medium;
+  font-weight: lighter;
+  margin-left: 300px;
+}
+
+.temp {
+  grid-area: temp;
+  margin: 25px;
+}
+
+.humidity {
+  grid-area: humidity;
+  margin: 25px;
+ }
+
+.forecast {
+  grid-area: forecast;
+  margin: 25px;
+  margin-top: 40px
+  }
+
+ #temp {
+   font-size: 25px;
+   font-weight: bold;
+ }
+
+ #icon[src] {
+   width: 80px;
+   height: 80px;
+ }
+
+ input[type=text] {
   width: 100%;
-}
-
-.enterForm {
-  width: 550px;
-  margin: auto;
-  padding: inherit;
-  border: 3px solid #73AD21;
-}
-
-.postForm {
-  width: 700px;
-  padding: inherit;   
-  margin: auto;
-}
-
-button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
+  padding: 12px 20px;
+  margin: 8px 0;
   display: inline-block;
-  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  float: left;
+}
+.enterForm {
+  margin: 50px;
+  margin-bottom: 15px;
+  margin-left: 300px;
 }
 
-button:hover {
-  background-color: #3e8e41;
+table, tr, td {
+  border-collapse: collapse;
+  padding: 5px;
 }
 
-th, td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+#label {
+  font-size: 35px;
+  font-style: bold;
+  text-decoration: underline
 }
