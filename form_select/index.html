@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>World Weather</title>
+    <script type="text/javascript" src="app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="sun.png">
+  </head>
+  <body>
+    <center>
+      <label id="label">World Weather</label>
+    </center>
+    <div class="blended_grid">
+      <center>
+        <div class="enterForm">
+          <label for="continent">Choose Continent:</label>
+          <select class="continent" onchange="getContinent()">
+            <option value=""></option>
+            <option value="Africa">Africa</option>
+            <option value="Antarctica">Antarctica</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="North America">North America</option>
+            <option value="Oceania">Oceania</option>
+            <option value="South America">South America</option>
+          </select>
+          <label for="country">Choose Country:</label>
+          <select class="country" onchange="getCountry()">
+          </select>
+          <label for="cities">Choose City:</label>
+          <select class="cities" onchange="getCity()">
+          </select>
+        </div>
+      </center>
+        <div class="weather-info">
+          <div class="temp">
+            <table>
+              <label id="label"></label>
+              <tr>
+                <td id="day"></td>
+              </tr>
+              <tr>
+                <td id="desc"></td>
+              </tr>
+              <tr>
+                <td><img id="icon"></td>
+                <td id="temp"></td>
+              </tr>
+            </table>
+          </div>
+          <div class="humidity">
+            <table>
+              <label id="label"></label>
+              <tr>
+                <td id="cloud"><img></td>
+              </tr>
+              <tr>
+                <td id="humidity"><img></td>
+              </tr>
+              <tr>
+                <td id="windSpeed"><img></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="forecast">
+          <table>
+            <label id="label"></label>
+            <tr>
+              <td name="days"></td>
+              <td name="days"></td>
+              <td name="days"></td>
+              <td name="days"></td>
+            </tr>
+            <tr>
+              <td><img name="img"></td>
+              <td><img name="img"></td>
+              <td><img name="img"></td>
+              <td><img name="img"></td>
+            </tr>
+            <tr>
+              <td name="temps"></td>
+              <td name="temps"></td>
+              <td name="temps"></td>
+              <td name="temps"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
