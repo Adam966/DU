@@ -1,0 +1,91 @@
+*{
+padding : 0;
+margin : 0;
+border : 0;
+}
+
+.blended_grid {
+display : block;
+width : 1200px;
+overflow : auto;
+margin : 30px auto 0 auto;
+border-radius: 25px;
+border: 1px solid black;
+font-family: arial,sans-serif;
+font-size: 20px;
+}
+
+.enterForm {
+  margin: 20px;
+}
+
+select {
+  width: 200px;
+  border: 1px solid black;
+}
+
+.weather-info {
+  border-radius: 25px;
+  float: left;
+}
+
+.temp {
+  float: left;
+  margin-left: 50px;
+}
+
+.humidity {
+  float: left;
+  margin-left: 150px;
+}
+
+.forecast {
+  float: right;
+  margin-right: 100px;
+}
+
+ #temp {
+   font-size: 40px;
+   font-weight: bold;
+   margin-right: 200px;
+ }
+
+ #icon[src] {
+   width: 75px;
+   height: 75px;
+ }
+
+ #desc {
+   margin-left: 50px;
+ }
+
+ input[type=text] {
+  padding: 12px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+table, tr, td {
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+#label {
+  font-size: 35px;
+  font-style: bold;
+  font-family: arial,sans-serif;
+  margin-top: 50px;
+}
