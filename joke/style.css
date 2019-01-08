@@ -1,0 +1,32 @@
+input {
+  margin: 10px;
+  padding: 5px;
+}
+
+label {
+  margin: 10px;
+}
+
+button {
+  margin-top: 10px;
+  margin-left: 50px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.enterForm {
+  position: absolute;
+  left: 40%;
+  margin-top: 50px;
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+}
