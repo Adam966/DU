@@ -10,6 +10,8 @@ public class Main {
         myCar.setColor(Color.GRAY);
         myCar.print();
 
-        Car superCar = new Car();
+        Car superCar = new Car("Skoda", "Octavia", 1993, 20, Color.GREEN);
+        superCar.print();
+        System.out.println(String.format("%02f", superCar.getKilometers(1.19, 50)));
     }
 }

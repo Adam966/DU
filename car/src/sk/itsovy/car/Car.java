@@ -43,10 +43,16 @@ public class Car {
         System.out.println("Brand: "+this.brand+" Model: "+model+" Color: "+color);
     }
 
-    public Car(String brand, String model, int year, double consution) {
+    public double getKilometers(double pricePerLiter, double price) {
+        double kilometers = price/pricePerLiter;
+        return kilometers;
+    }
+
+    public Car(String brand, String model, int year, double consution, Color color) {
         this.brand = brand;
         this.model = model;
         this.year = year;
         this.consution = consution;
+        this.color = color;
     }
 }
