@@ -14,8 +14,17 @@
         <input type="text" id="login"> <br>
         <label for="password">Password:</label> <br>
         <input type="password" id="password"> <br>
-        <button type="button" id="send">Login</button>
+        <button type="button" id="send" onclick="getLogin()">Login</button>
       </form>
+    </div>
+    <div class="jokeField">
+      <p id="author"></p>
+      <p id="joke"></p>
+      <button type="button" onclick="getJoke()">Joke</button>
+    </div>
+    <div class="status">
+      <p id="status"></p>
+      <button type="button" onclick="getLogout()">Logout</button>
     </div>
   </body>
 </html>
