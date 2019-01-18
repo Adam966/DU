@@ -30,3 +30,17 @@ button {
   width: 200px;
   height: 250px;
 }
+
+.jokeField {
+  position: absolute;
+  left: 1%;
+  margin-top: 50px;
+  padding: 20px;
+  width: 100px;
+  height: 250px;
+}
+
+#author {
+  text-decoration: underline;
+  font-weight: bold;
+}

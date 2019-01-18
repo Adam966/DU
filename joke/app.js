@@ -1,6 +1,5 @@
 function getLogin() {
   let name = $('#login').val();
-<<<<<<< HEAD
   let password = $('#password').val();
 
   let req = 'http://www.itsovy.sk:1201/login';
@@ -10,6 +9,7 @@ function getLogin() {
     password: password
   }
   let data = JSON.stringify(dataLogin);
+  $('.jokeField').show();
   sendRequest(req, data, kind);
 }
 
@@ -37,63 +37,56 @@ function getLogout() {
   sendRequest(req, data, kind);
 }
 
+function sendJoke() {
+  let req = 'http://www.itsovy.sk:1201/sendjoke';
+  let kind = 'sendjoke';
+
+  let dataLogin = {
+    login: sessionStorage.getItem('login'),
+    token: sessionStorage.getItem('token'),
+    joke: $('#text').val()
+  }
+  let data = JSON.stringify(dataLogin);
+  sendRequest(req, data, kind);
+}
+
 function sendRequest(req, data, kind) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState === 4 && this.status == 200) {
-      let obj=JSON.parse(this.responseText);
+      let obj;
       switch (kind) {
         case 'login':
+          obj=JSON.parse(this.responseText);
           console.log(obj);
           sessionStorage.setItem("login", obj.login);
           sessionStorage.setItem("token", obj.token);
-          $('#status').html('You have been successfully log in.');
+          $('#status').html('You have been successfully log in as: ' + obj.login);
           break;
         case 'joke':
+          obj = JSON.parse(this.responseText);
           $('#author').html(obj.author);
           $('#joke').html(obj.joke);
           break;
         case 'logout':
-          $('#status').html('You have been successfully '+ obj);
+          $('#status').html('You have been successfully log out');
+          $('.jokeField').hide();
+          $('#joke').clear();
+          $('#author').clear();
+        case 'sendjoke':
+          $('#status').html('You successfully send joke.');
+          $('#text').clear();
           break;
         default:
       }
     }
   }
-  xhttp.open("POST", req);
-  xhttp.setRequestHeader("Content-Type", "application/json")
-=======
-  let pass = $('#password').val();
-  let req = 'http://itsovy.sk:1201/login';
-  let login = {
-    login: name,
-    password: pass,
-  }
-  let data = JSON.stringify(login);
-
-  sendRequest(data, req);
-}
-
-function logout() {
-  let req = 'http://itsovy.sk:1201/login';
-  sessionStorage.clear();
-}
-
-function sendRequest(data, req) {
-
-  let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      let obj=JSON.parse(this.responseText);
-      if (typeof(Storage) !== "undefined") {
-        sessionStorage.setItem('login', obj.login);
-        sessionStorage.setItem('token', obj.token);
-      }
-    }
-  };
 
   xhttp.open("POST", req);
   xhttp.setRequestHeader("Content-Type", "application/json");
->>>>>>> 2729b0a66bc5d1242d5b805c9c22a6e832fc07b5
   xhttp.send(data);
 }
+
+$('.enterForm').ready(function() {
+    $('.jokeField').hide();
+});
