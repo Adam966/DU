@@ -9,8 +9,11 @@ function getLogin() {
     password: password
   }
   let data = JSON.stringify(dataLogin);
+  console.log(data);
   $('.jokeField').show();
+  $('.messageField').show();
   sendRequest(req, data, kind);
+  $('.enterForm').hide();
 }
 
 function getJoke() {
@@ -50,6 +53,32 @@ function sendJoke() {
   sendRequest(req, data, kind);
 }
 
+function getMessages() {
+  let req = 'http://www.itsovy.sk:1201/getmessages';
+  let kind = 'getmessage';
+
+  let dataLogin = {
+    login: sessionStorage.getItem('login'),
+    token: sessionStorage.getItem('token'),
+    message: $('#textMessage').val()
+  }
+  let data = JSON.stringify(dataLogin);
+  sendRequest(req, data, kind);
+}
+
+function sendMessage() {
+  let req = 'http://www.itsovy.sk:1201/getmessages';
+  let kind = 'sendmessage';
+
+  let dataLogin = {
+    login: sessionStorage.getItem('login'),
+    token: sessionStorage.getItem('token'),
+    user: $('#reciprocent').val()
+  }
+  let data = JSON.stringify(dataLogin);
+  sendRequest(req, data, kind);
+}
+
 function sendRequest(req, data, kind) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -73,12 +102,22 @@ function sendRequest(req, data, kind) {
           $('.jokeField').hide();
           $('#joke').clear();
           $('#author').clear();
+          $('#messageField').clear();
         case 'sendjoke':
           $('#status').html('You successfully send joke.');
           $('#text').clear();
+        case 'getmessage':
+          obj=JSON.parse(this.responseText);
+          for (var i = 0; i < obj.messages.length; i++) {
+            $( "#messages" ).append('<p id="name">' + 'Name: '+ obj.messages[i].from + '</p>');
+            $( "#messages" ).append('<p id="message">' + obj.messages[i].message + '</p>');
+          }
           break;
         default:
       }
+    }
+    else {
+      $('#status').html('Bad login')
     }
   }
 
@@ -89,4 +128,8 @@ function sendRequest(req, data, kind) {
 
 $('.enterForm').ready(function() {
     $('.jokeField').hide();
+});
+
+$('.messageField').ready(function() {
+    $('.messageField').hide();
 });

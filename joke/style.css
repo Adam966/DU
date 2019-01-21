@@ -44,3 +44,23 @@ button {
   text-decoration: underline;
   font-weight: bold;
 }
+
+.messageField {
+  position: absolute;
+  margin-top: 500px;
+}
+
+#messages {
+  position: absolute;
+  margin-top: 400px;
+}
+
+#name {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#message {
+  margin-left: 50px;
+}
