@@ -113,6 +113,8 @@ function sendRequest(req, data, kind) {
             $( "#messages" ).append('<p id="name">' + 'Name: '+ obj.messages[i].from + '</p>');
             $( "#messages" ).append('<p id="message">' + obj.messages[i].message + '</p>');
           }
+        case 'sendmessage':
+          $('#sendMessage').clear();
           break;
         default:
       }
@@ -137,4 +139,8 @@ $('.messageField').ready(function() {
 
 $('.messageGetField').ready(function() {
     $('.messageGetField').hide();
+});
+
+$('.changePassword').ready(function() {
+    $('.changePassword').hide();
 });

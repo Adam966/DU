@@ -29,13 +29,18 @@
     </div>
     <div class="messageField">
       <textarea id="textMessage" rows="8" cols="50"></textarea>
-      <input type="text" id="reciprocent" value="Enter user name of reciprocent">
-      <button type="button" id="sendmessage" onclick="sendmessage()">Send Message</button>
+      <input type="text" id="reciprocent">
+      <button type="button" id="sendmessage" onclick="sendMessage()">Send Message</button>
     </div>
     <div class="messageGetField">
       <div id="messages">
       </div>
-      <button type="button" id="getmessage" onclick="getMessage()">Get Message</button>
-    </div>1
+      <button type="button" id="getmessage" onclick="getMessages()">Get Message</button>
+      <button type="button" id="deletemessage">Delete</button>
+    </div>
+    <div class="changePassword">
+      <label for="changepass">Changed Password:</label>
+      <input type="text" id="changepass" value="Write your changed password.">
+    </div>
   </body>
 </html>
