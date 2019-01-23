@@ -12,6 +12,7 @@ function getLogin() {
   console.log(data);
   $('.jokeField').show();
   $('.messageField').show();
+  $('.messageGetField').show();
   sendRequest(req, data, kind);
   $('.enterForm').hide();
 }
@@ -132,4 +133,8 @@ $('.enterForm').ready(function() {
 
 $('.messageField').ready(function() {
     $('.messageField').hide();
+});
+
+$('.messageGetField').ready(function() {
+    $('.messageGetField').hide();
 });

@@ -15,26 +15,27 @@
         <label for="password">Password:</label> <br>
         <input type="password" id="password"> <br>
         <button type="button" id="send" onclick="getLogin()">Login</button>
-        <button type="button" onclick="getLogout()">Logout</button>
       </form>
     </div>
     <div class="jokeField">
       <p id="author"></p>
       <p id="joke"></p>
-      <button type="button" onclick="getJoke()">Get Joke</button>
-      <textarea id="text" rows="8" cols="80"></textarea>
-      <button type="button" onclick="sendJoke()">Send Joke</button>
+      <button type="button" id="joke" onclick="getJoke()">Get Joke</button>
+      <textarea id="text" rows="8" cols="50"></textarea>
+      <button type="button" id="joke" onclick="sendJoke()">Send Joke</button>
     </div>
     <div class="status">
       <p id="status"></p>
     </div>
     <div class="messageField">
-      <div id="messages">
-      </div>
-      <button type="button" id="getmessage" onclick="getMessages()">Get Messages</button>
-      <textarea id="textMessage" rows="8" cols="80"></textarea>
+      <textarea id="textMessage" rows="8" cols="50"></textarea>
       <input type="text" id="reciprocent" value="Enter user name of reciprocent">
       <button type="button" id="sendmessage" onclick="sendmessage()">Send Message</button>
     </div>
+    <div class="messageGetField">
+      <div id="messages">
+      </div>
+      <button type="button" id="getmessage" onclick="getMessage()">Get Message</button>
+    </div>1
   </body>
 </html>
