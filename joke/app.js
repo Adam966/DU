@@ -128,9 +128,14 @@ function sendRequest(req, data, kind) {
             $( "#messages" ).append('<p id="name">' + 'Name: '+ obj.messages[i].from + '</p>');
             $( "#messages" ).append('<p id="message">' + obj.messages[i].message + '</p>');
           }
+<<<<<<< HEAD
         case 'changepass':
           $('#changepass').clear();
           $('#status').html('You successfully change your password.');
+=======
+        case 'sendmessage':
+          $('#sendMessage').clear();
+>>>>>>> e07ebfd05ad0941eff62fd11e5708b9c1bcb3229
           break;
         default:
       }
@@ -159,5 +164,8 @@ $('.messageGetField').ready(function() {
 
 $('.changePassword').ready(function() {
     $('.changePassword').hide();
+<<<<<<< HEAD
     sessionStorage.clear();
+=======
+>>>>>>> e07ebfd05ad0941eff62fd11e5708b9c1bcb3229
 });

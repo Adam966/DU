@@ -29,13 +29,19 @@
     </div>
     <div class="messageField">
       <textarea id="textMessage" rows="8" cols="50"></textarea>
+<<<<<<< HEAD
       <input type="text" id="reciprocent" placeholder="Enter user name of reciprocent">
       <button type="button" id="sendmessage" onclick="sendmessage()">Send Message</button>
+=======
+      <input type="text" id="reciprocent">
+      <button type="button" id="sendmessage" onclick="sendMessage()">Send Message</button>
+>>>>>>> e07ebfd05ad0941eff62fd11e5708b9c1bcb3229
     </div>
     <div class="messageGetField">
       <div id="messages">
       </div>
       <button type="button" id="getmessage" onclick="getMessages()">Get Message</button>
+<<<<<<< HEAD
     </div>
     <div class="changePassword">
       <form>
@@ -44,6 +50,13 @@
         <input type="password" id="newpassword" placeholder="Enter changed password." pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
         <input type="submit" onclick="changePassword()">Change Password</button>
       </form>
+=======
+      <button type="button" id="deletemessage">Delete</button>
+    </div>
+    <div class="changePassword">
+      <label for="changepass">Changed Password:</label>
+      <input type="text" id="changepass" value="Write your changed password.">
+>>>>>>> e07ebfd05ad0941eff62fd11e5708b9c1bcb3229
     </div>
   </body>
 </html>
