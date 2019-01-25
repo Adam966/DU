@@ -29,13 +29,21 @@
     </div>
     <div class="messageField">
       <textarea id="textMessage" rows="8" cols="50"></textarea>
-      <input type="text" id="reciprocent" value="Enter user name of reciprocent">
+      <input type="text" id="reciprocent" placeholder="Enter user name of reciprocent">
       <button type="button" id="sendmessage" onclick="sendmessage()">Send Message</button>
     </div>
     <div class="messageGetField">
       <div id="messages">
       </div>
-      <button type="button" id="getmessage" onclick="getMessage()">Get Message</button>
-    </div>1
+      <button type="button" id="getmessage" onclick="getMessages()">Get Message</button>
+    </div>
+    <div class="changePassword">
+      <form>
+        <label for="changepass"></label>
+        <input type="password" id="oldpassword" placeholder="Enter your password.">
+        <input type="password" id="newpassword" placeholder="Enter changed password." pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+        <input type="submit" onclick="changePassword()">Change Password</button>
+      </form>
+    </div>
   </body>
 </html>

@@ -49,20 +49,26 @@ button {
 
 .messageField {
   position: absolute;
-  margin-top: 250px;
+  margin-top: 50px;
   right: 50%;
   width: 100px;
 }
 
 .messageGetField {
   position: absolute;
-  right: 25%;
-  width: 100px;s
+  right: 15%;
+  width: 100px;
+}
+
+.changePassword {
+  position: absolute;
+  left: 15%;
+  top: 70%;
 }
 
 #messages {
   position: absolute;
-  margin-top: 400px;
+  margin-top: 150px;
 }
 
 #name {

@@ -9,12 +9,27 @@ function getLogin() {
     password: password
   }
   let data = JSON.stringify(dataLogin);
-  console.log(data);
   $('.jokeField').show();
   $('.messageField').show();
   $('.messageGetField').show();
+  $('.changePassword ').show();
   sendRequest(req, data, kind);
   $('.enterForm').hide();
+}
+
+function changePassword() {
+  let req = 'http://www.itsovy.sk:1201/changepassword';
+  let kind = 'password';
+
+  let dataLogin = {
+    login: sessionStorage.getItem('login'),
+    oldpassword: $('#oldpassword').val(),
+    token: sessionStorage.getItem('token'),
+    newpassword: $('#newpassword').val()
+  }
+  let data = JSON.stringify(dataLogin);
+  console.log(data);
+  sendRequest(req, data, kind);
 }
 
 function getJoke() {
@@ -113,6 +128,9 @@ function sendRequest(req, data, kind) {
             $( "#messages" ).append('<p id="name">' + 'Name: '+ obj.messages[i].from + '</p>');
             $( "#messages" ).append('<p id="message">' + obj.messages[i].message + '</p>');
           }
+        case 'changepass':
+          $('#changepass').clear();
+          $('#status').html('You successfully change your password.');
           break;
         default:
       }
@@ -137,4 +155,9 @@ $('.messageField').ready(function() {
 
 $('.messageGetField').ready(function() {
     $('.messageGetField').hide();
+});
+
+$('.changePassword').ready(function() {
+    $('.changePassword').hide();
+    sessionStorage.clear();
 });
