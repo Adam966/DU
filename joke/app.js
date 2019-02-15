@@ -9,15 +9,14 @@ function getLogin() {
     password: password
   }
   let data = JSON.stringify(dataLogin);
-  $('.jokeField').show();
-  $('.messageField').show();
-  $('.messageGetField').show();
-  $('.changePassword ').show();
+  $('.menu').show();
   sendRequest(req, data, kind);
   $('.enterForm').hide();
 }
 
 function changePassword() {
+  hide();
+  $('.changePassword ').show();
   let req = 'http://www.itsovy.sk:1201/changepassword';
   let kind = 'password';
 
@@ -33,6 +32,8 @@ function changePassword() {
 }
 
 function getJoke() {
+  hide();
+  $('.jokeField').show();
   let req = 'http://www.itsovy.sk:1201/joke';
   let kind = 'joke';
 
@@ -54,6 +55,9 @@ function getLogout() {
   }
   let data = JSON.stringify(dataLogin);
   sendRequest(req, data, kind);
+  hide();
+  hideMenu();
+  $('.enterForm').show();
 }
 
 function sendJoke() {
@@ -70,6 +74,8 @@ function sendJoke() {
 }
 
 function getMessages() {
+  hide();
+  $('.messageGetField').show();
   let req = 'http://www.itsovy.sk:1201/getmessages';
   let kind = 'getmessage';
 
@@ -83,6 +89,8 @@ function getMessages() {
 }
 
 function sendMessage() {
+  hide();
+  $('.messageField').show();
   let req = 'http://www.itsovy.sk:1201/getmessages';
   let kind = 'sendmessage';
 
@@ -129,7 +137,6 @@ function sendRequest(req, data, kind) {
             $( "#messages" ).append('<p id="message">' + obj.messages[i].message + '</p>');
           }
         case 'changepass':
-          $('#changepass').clear();
           $('#status').html('You successfully change your password.');
           break;
         default:
@@ -145,19 +152,14 @@ function sendRequest(req, data, kind) {
   xhttp.send(data);
 }
 
-$('.enterForm').ready(function() {
-    $('.jokeField').hide();
-});
+  function hideMenu() {
+    $('.menu').hide()
+  }
 
-$('.messageField').ready(function() {
-    $('.messageField').hide();
-});
-
-$('.messageGetField').ready(function() {
-    $('.messageGetField').hide();
-});
-
-$('.changePassword').ready(function() {
-    $('.changePassword').hide();
-    sessionStorage.clear();
-});
+function hide() {
+  $('.jokeField').hide();
+  $('.status').hide();
+  $('.messageField').hide();
+  $('.messageGetField').hide();
+  $('.changePassword').hide();
+}

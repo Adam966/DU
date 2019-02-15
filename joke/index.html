@@ -7,8 +7,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </head>
-  <body>
-    <div class="enterForm">
+  <body onload="hide(), hideMenu()">
+    <div class="enterForm" onload="">
       <form>
         <label for="login">Name:</label><br>
         <input type="text" id="login"> <br>
@@ -17,6 +17,18 @@
         <button type="button" id="send" onclick="getLogin()">Login</button>
       </form>
     </div>
+    <center>
+      <div class="menu">
+        <button type="button" onclick="getJoke()">Joke</button>
+        <button type="button" onclick="getMessages()">Get Message</button>
+        <button type="button" onclick="sendMessage()">Send Message</button>
+        <button type="button" onclick="changePassword">Change password</button>
+        <button type="button" onclick="getLogout()">Logout</button>
+        <div class="status">
+          <p id="status"></p>
+        </div>
+      </div>
+    </center>
     <div class="jokeField">
       <p id="author"></p>
       <p id="joke"></p>
@@ -24,13 +36,10 @@
       <textarea id="text" rows="8" cols="50"></textarea>
       <button type="button" id="joke" onclick="sendJoke()">Send Joke</button>
     </div>
-    <div class="status">
-      <p id="status"></p>
-    </div>
     <div class="messageField">
       <textarea id="textMessage" rows="8" cols="50"></textarea>
       <input type="text" id="reciprocent" placeholder="Enter user name of reciprocent">
-      <button type="button" id="sendmessage" onclick="sendmessage()">Send Message</button>
+      <button type="button" id="sendmessage" onclick="sendMessage()">Send Message</button>
     </div>
     <div class="messageGetField">
       <div id="messages">
